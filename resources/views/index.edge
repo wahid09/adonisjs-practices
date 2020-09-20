@@ -1,0 +1,49 @@
+@layout('layouts.app')
+@section('title')
+Home - Jobportal
+@endsection
+@section('extrastyle')
+<style>
+.main-cont{
+   margin-top: 10px;
+}
+.jobpartt{
+    background: white;
+}
+body{
+    background-color:#EFEFEF;
+}
+.jobPhoto{
+    border:1px;
+}
+</style>
+@endsection
+
+@section('content')
+<div class="main-cont">
+<div class="card">
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+@each(job in jobs)
+  <div class="jobpartt">
+    <div class="row">
+    <div class="col-sm-2">
+    <div class="jobPhoto">
+    </div>
+    </div>
+    <div class="col-sm-10">
+    <h5>{{ job.title }}</h5>
+    <p>{{ job.description }}</p>
+    </div>
+    </div>
+  </div>
+  <hr>
+
+  @endeach
+
+</div>
+</div>
+</div>
+@endsection
